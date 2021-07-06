@@ -1,6 +1,24 @@
-<div class="calendar-container">
-  <%= month_calendar do |date| %>
-    <%= date %>
-  <% end %>
-</div>
 
+<div class="container mt-5">
+
+  <div class="row">
+
+    <div class="col-7">
+      <div class="calendar-container">
+        <%= month_calendar do |date| %>
+          <%= date %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class="card justify-content-between align-items-center">
+        <div class="title">
+            <p>Récapitulatif de votre Réservation</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
