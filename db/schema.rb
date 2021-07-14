@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_05_140635) do
+ActiveRecord::Schema.define(version: 2021_07_14_113430) do
 
   create_table "bookings", force: :cascade do |t|
     t.datetime "start_time"
@@ -21,5 +21,14 @@ ActiveRecord::Schema.define(version: 2021_07_05_140635) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.integer "calendar_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["calendar_id"], name: "index_cities_on_calendar_id"
+  end
+
   add_foreign_key "bookings", "users"
+  add_foreign_key "cities", "calendars"
 end
