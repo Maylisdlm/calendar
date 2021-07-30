@@ -4,9 +4,13 @@
   <div class="row">
 
     <div class="col-7">
-      <div class="calendar-container">
-        <%= month_calendar do |date| %>
-          <%= date %>
+      <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+        <h2>Flatpickr Demo</h2>
+
+        <%= simple_form_for :search, method: "get" do |f| %>
+          <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.button :submit, "Go", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
@@ -17,19 +21,6 @@
             <p>Récapitulatif de votre Réservation</p>
         </div>
       </div>
-    </div>
-
-  </div>
-
-  <div class="container">
-    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <h2>Flatpickr Demo</h2>
-
-      <%= simple_form_for :search, method: "get" do |f| %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.button :submit, "Go", class: "btn btn-primary" %>
-      <% end %>
     </div>
   </div>
 
