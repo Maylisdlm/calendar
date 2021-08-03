@@ -12,8 +12,10 @@
         <p>Journée 8h (160€ par personne)</p>
         <p>Demi-Journée 4h (100€ par personne)</p>
         <p>Periode</p>
+        <div class="d-flex">
           <%= f.input :DU, as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :AU, as: :string, required: false, input_html: {class: "datepicker"} %>
+        </div>
         <p>Jour</p>
           <%= f.input :LE, as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.button :submit, "Go", class: "btn btn-primary" %>
