@@ -9,6 +9,8 @@
         <%= simple_form_for :search, method: "get" do |f| %>
           <%= f.input :Ville, collection: ['Tokyo', 'Kyoto', 'Osaka', 'Nara'] %>
           <%= f.input :nombre_de_personne, collection: 1..5 %>
+        <p>Journée 8h (160€ par personne)</p>
+        <p>Demi-Journée 4h (100€ par personne)</p>
         <p>Periode</p>
           <%= f.input :DU, as: :string, required: false, input_html: {class: "datepicker"} %>
           <%= f.input :AU, as: :string, required: false, input_html: {class: "datepicker"} %>
