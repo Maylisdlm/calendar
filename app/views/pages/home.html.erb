@@ -4,23 +4,35 @@
   <div class="row">
 
     <div class="col-7">
+    <div class="card">
       <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
         <h2>Réservation</h2>
         <%= simple_form_for :search, method: "get" do |f| %>
           <%= f.input :Ville, collection: ['Tokyo', 'Kyoto', 'Osaka', 'Nara'] %>
           <%= f.input :nombre_de_personne, collection: 1..5 %>
-        <p>Journée 8h (160€ par personne)</p>
-        <p>Demi-Journée 4h (100€ par personne)</p>
-        <p>Periode</p>
-        <div class="d-flex">
-          <%= f.input :DU, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :AU, as: :string, required: false, input_html: {class: "datepicker"} %>
-        </div>
-        <p>Jour</p>
-          <%= f.input :LE, as: :string, required: false, input_html: {class: "datepicker"} %>
+            <div class="card">
+              <div class="d-flex">
+                <p>Journée 8h (160€ par personne)</p>
+                <%= check_box :p , :journée,:valeur_on=>160, :valeur_off=>0 %>
+              </div>
+              <div class="d-flex">
+                <p>Demi-Journée 4h (100€ par personne)</p>
+                <%= check_box :p , :demi_journée,:valeur_on=>100, :valeur_off=>0 %>
+              </div>
+           </div>
+           <div class="card">
+              <p>Periode</p>
+              <div class="d-flex">
+                <%= f.input :DU, as: :string, required: false, input_html: {class: "datepicker"} %>
+                <%= f.input :AU, as: :string, required: false, input_html: {class: "datepicker"} %>
+              </div>
+              <p>Jour</p>
+                <%= f.input :LE, as: :string, required: false, input_html: {class: "datepicker"} %>
+           </div>
           <%= f.button :submit, "Ajouter à votre Réservation", class: "btn btn-primary" %>
         <% end %>
       </div>
+    </div>
     </div>
 
     <div class="col-5">
