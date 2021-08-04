@@ -18,7 +18,7 @@
         </div>
         <p>Jour</p>
           <%= f.input :LE, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.button :submit, "Go", class: "btn btn-primary" %>
+          <%= f.button :submit, "Ajouter à votre Réservation", class: "btn btn-primary" %>
         <% end %>
       </div>
     </div>
@@ -27,6 +27,7 @@
       <div class="card justify-content-between align-items-center">
         <div class="title">
             <p>Récapitulatif de votre Réservation</p>
+             <%= link_to '(logo poubelle)', method: :delete, data: {confirm: 'Êtes vous sûr de vouloir supprimer cette réservation ?'}, class: "btn btn-link", style: "position: relative; bottom: -86px; right: -15px;"%>
         </div>
       </div>
     </div>
