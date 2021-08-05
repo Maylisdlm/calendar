@@ -15,6 +15,14 @@ class BookingsController < ApplicationController
     end
   end
 
+  def index
+    @booking = Booking.new
+    @booking_requests_received = []
+    booking.each do |booking|
+      booking.each {|book| @booking_requests_received << book}
+    end
+  end
+
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
