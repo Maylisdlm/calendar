@@ -4,6 +4,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def show
+    @booking = Booking.new
+    @booking = Booking.find(params[:id])
+    @pricing = @booking.daily_pricing
+  end
+
   def create
     @booking = Booking.new(booking_params)
     booking_period = (@booking.date_end - @booking.date_beginning).to_i
