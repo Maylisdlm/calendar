@@ -12,6 +12,7 @@
           <%= f.input :nombre_de_personne, collection: 1..5 %>
             <div class="card">
               <div class="d-flex">
+             <%= f.collection_radio_buttons :options, [[true, 'Yes'], [false, 'No']], :first, :last %>
                 <p>Journée 8h (160€ par personne)</p>
                 <%= check_box :p , :journée,:valeur_on=>160, :valeur_off=>0 %>
               </div>

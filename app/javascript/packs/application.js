@@ -19,13 +19,16 @@ Turbolinks.start()
 ActiveStorage.start()
 
 
-// const convert = document.getElementById("convert")
-// const price = document.getElementById("price")
+const check_box = document.querySelector("check_box")
+const price = document.getElementById("price")
 
-// if (convert) {
-//   convert.addEventListener("click", (event) => {
-//     event.preventDefault();
-//     const start = document.getElementsByClassName("start")[0].value.split("-");
+if (check_box) {
+  check_box.addEventListener("click", (event) => {
+     event.preventDefault();
+
+  })
+}
+//      const start = document.getElementsByClassName("start")[0].value.split("-");
 //     const endy = document.getElementsByClassName("end")[0].value.split("-");
 //     const daily = document.getElementsByClassName("card-trip-pricing")[0].innerText.slice(0, -1);
 
