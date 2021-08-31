@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     booking_period = (@booking.date_end - @booking.date_beginning).to_i
-    @booking.booking_pricing = @nb_user.count.daily_pricing * booking_period
+    @booking.booking_pricing = @pricing * booking_period
     if @booking.save
       redirect_to # pages_home_path     ou      booking_path(@booking)
     else
@@ -37,6 +37,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:city, :nb_user, :daily_pricing, :date_beginning, :date_end)
+    params.require(:booking).permit(:city, :daily_pricing, :date_beginning, :date_end)
   end
 end
